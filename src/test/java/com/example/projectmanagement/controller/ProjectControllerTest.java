@@ -65,3 +65,4 @@ public class ProjectControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.title").value("Test Task"));
     }
+}
