@@ -3,6 +3,7 @@ package com.example.projectmanagement.controller;
 import com.example.projectmanagement.model.Project;
 import com.example.projectmanagement.model.Task;
 import com.example.projectmanagement.dto.ProjectSummaryDTO;
+import com.example.projectmanagement.model.TaskStatus;
 import com.example.projectmanagement.service.ProjectService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
@@ -10,6 +11,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 

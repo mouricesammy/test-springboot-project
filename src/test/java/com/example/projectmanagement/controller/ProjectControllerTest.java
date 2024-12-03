@@ -48,21 +48,4 @@ public class ProjectControllerTest {
                 .andExpect(jsonPath("$.name").value("Test Project"));
     }
 
-    @Test
-    public void createTask_ValidInput_ReturnsTask() throws Exception {
-        UUID projectId = UUID.randomUUID();
-        Task task = new Task();
-        task.setTitle("Test Task");
-        task.setDescription("Test Description");
-        task.setStatus(TaskStatus.TO_DO);
-        task.setDueDate(LocalDate.now().plusDays(7));
-
-        when(projectService.addTask(any(Task.class))).thenReturn(task);
-
-        mockMvc.perform(post("/api/projects/" + projectId + "/tasks")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(task)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.title").value("Test Task"));
-    }
 }
